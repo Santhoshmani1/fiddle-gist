@@ -1,0 +1,72 @@
+{
+  "name": "fiddle-gist",
+  "displayName": "fiddle-gist",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fiddle-gist.helloWorld",
+        "title": "Fiddle-gist - Hello World"
+      },
+      {
+        "command": "fiddle-gist.saveGithubPAT",
+        "title": "Fiddle-gist - Save Github PAT"
+      },
+      {
+        "command": "fiddle-gist.importGistAsFiddle",
+        "title": "Fiddle-gist - Import fiddle"
+      },
+      {
+        "command": "fiddle-gist.publishAsGist",
+        "title": "Fiddle-gist - Publish fiddle as gist"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fiddle-gist",
+          "title": "fiddle-gist",
+          "icon": "./assets/electron.jpg"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "fiddle-gist",
+          "name": "Electron Fid",
+          "when": "explorerViewletVisible",
+          "canToggleVisibility": true,
+          "order": 100
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "node-fetch": "^3.3.2"
+  }
+}
